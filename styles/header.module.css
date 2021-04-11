@@ -1,5 +1,5 @@
 .headerContainer {
-    padding: 35px 0px;
+    padding: 35px 0;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -27,10 +27,10 @@
 }
 
 .link::after {
-    width: 0%;
+    width: 0;
     background: #000000 none repeat scroll 0 0;
     content: "";
-    height: 0.1px;
+    height: 1px;
     left: 0;
     position: absolute;
     top: 100%;

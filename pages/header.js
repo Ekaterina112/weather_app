@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from 'next/image'
-import styles from './header.module.css'
+import styles from '../styles/header.module.css'
 import ButtonCustom from "../components/buttonCustom/buttonCustom";
+import React from "react";
 
 export default function Header() {
-    const menuPoints = ["home", "place", "contacts", "about",]
+    const menuPoints = ["weather", "time", "contacts",]
     return <div className={styles.headerContainer}>
         <Image src='/assets/logo.png'
                alt="logo"
@@ -12,6 +13,11 @@ export default function Header() {
                height={46}/>
         <div className={styles.blockMenu}>
             <div className={styles.menu}>
+                <Link href={`/`}>
+                    <a className={styles.link}>
+                        home
+                    </a>
+                </Link>
                 {menuPoints.map((point, index) => <Link key={index} href={`/${point}`}>
                     <a className={styles.link}>
                         {point}

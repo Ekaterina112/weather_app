@@ -2,3 +2,13 @@ body {
     font-family: 'Poppins', sans-serif;
     padding: 0  40px;
 }
+@media screen and (max-width: 750px) {
+    body {
+        padding: 0  10px;
+    }
+}
+@media screen and (max-width: 450px) {
+    body {
+        padding: 0;
+    }
+}

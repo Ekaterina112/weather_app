@@ -1,6 +1,6 @@
 .btn {
     padding: 0 26px;
-    height: 40px;
+    min-height: 40px;
     line-height: 39px;
     border: 1px solid #000000;
     border-radius: 3px;

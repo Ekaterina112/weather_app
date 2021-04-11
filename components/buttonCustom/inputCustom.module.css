@@ -1,0 +1,9 @@
+.customInput {
+    color: #7c7d7e;
+    font-size: 16px;
+    border: 0 none;
+    border-bottom: 1px solid #ebebec;
+    margin:10px 0;
+    font-family: 'Poppins', sans-serif;
+    outline:none
+}

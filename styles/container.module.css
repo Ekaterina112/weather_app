@@ -1,9 +1,14 @@
 .mainContainer{
     min-height: 70vh;
+    padding: 50px;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     background-image: url("../public/assets/bg-image.jpg");
     background-position: center center;
     background-size: cover; /*//для сохранеия пропорций*/
+}
+@media screen and (max-width: 390px) {
+    .mainContainer {
+        padding: 20px;
+    }
 }

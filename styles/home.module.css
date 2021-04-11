@@ -1,0 +1,47 @@
+.homeContainer {
+
+}
+
+
+.inner_h3 {
+    font-size: 70px;
+    font-weight: 300;
+    line-height: 100px;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+.inner_h1{
+    color: #000000;
+    font-size: 70px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+.content{
+    color: #2e2e2d;
+    font-weight: 300;
+    line-height: 30px;
+    font-size: 18px;
+    margin: 0;
+}
+.link{
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+}
+.link::after {
+    width: 0;
+    background: #000000 none repeat scroll 0 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    transform: translate(-0, -50%);
+    transition: all .3s ease-in-out;
+}
+
+.link:hover:after,
+.link:focus:after {
+    width: 100%;
+}
