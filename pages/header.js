@@ -1,8 +1,9 @@
+import React from "react";
 import Link from "next/link";
 import Image from 'next/image'
 import styles from '../styles/header.module.css'
 import ButtonCustom from "../components/buttonCustom/buttonCustom";
-import React from "react";
+
 
 export default function Header() {
     const menuPoints = ["weather", "time", "contacts",]
@@ -13,6 +14,7 @@ export default function Header() {
                height={46}/>
         <div className={styles.blockMenu}>
             <div className={styles.menu}>
+                {/* right link in Next.JS, change page, without scroll*/}
                 <Link href={`/`}>
                     <a className={styles.link}>
                         home
@@ -25,9 +27,7 @@ export default function Header() {
                 </Link>)}
             </div>
             <ButtonCustom title={'Sign In'}/>
-            {/* right link in Next.JS, change page, without scroll*/}
         </div>
-
     </div>
 }
 
