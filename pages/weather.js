@@ -72,7 +72,7 @@ export default function Weather({initialWeather}) {
         //const country = inputState.country
 
         if (inputState.city && inputState.country) {
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${inputState.city},${inputState.country}&units=metric&appid=${API_key}`)
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputState.city},${inputState.country}&units=metric&appid=${API_key}`)
             if (response.status === 200) {
                 const start = await response.json();
                 startWeatherSet(start)
@@ -118,7 +118,7 @@ export default function Weather({initialWeather}) {
 //initial state in next.js
 //Static method, doing on a server
 Weather.getInitialProps = async () => {
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Gomel&units=metric&appid=${API_key}`)
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Gomel&units=metric&appid=${API_key}`)
     const initialWeather = await response.json()
     return {
         initialWeather
