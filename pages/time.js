@@ -3,6 +3,6 @@ import {MainLayout} from "../components/MainLayout";
 
 export default function Time() {
     return <MainLayout>
-        <h3>weather</h3>
+        <h3>time</h3>
     </MainLayout>
 }
