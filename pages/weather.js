@@ -53,37 +53,21 @@ export default function Weather({initialWeather}) {
         }
     }
 
-    //control input
-    const [inputState, setInputState] = useState({})
-    const inputHandler = (e) => {
-        setInputState(prev => {
-            return (
-                {
-                    ...prev,
-                    [e.target.name]: e.target.value
-                }
-            )
-        })
-    }
 
     const getWeatherHandler = async (e) => {
         e.preventDefault();
-        //const city = e.target.elements.city.value
-        //const country = e.target.elements.country.value
-        //const city = inputState.city
-        //const country = inputState.country
+        const city = e.target.elements.city.value
+        const country = e.target.elements.country.value
 
-        if (inputState.city && inputState.country) {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputState.city},${inputState.country}&units=metric&appid=${API_key}`)
+        if (city && country) {
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${API_key}`)
             if (response.status === 200) {
                 const start = await response.json();
                 startWeatherSet(start)
                 setError('')
-                console.log(start)
             } else {
-                //e.target.elements.city.value = ""
-                //e.target.elements.country.value = ""
-                setInputState({country: '', city: ''})
+                e.target.elements.city.value = ""
+                e.target.elements.country.value = ""
                 setError('Your response is not valid. \n Please, try again')
             }
         } else {
@@ -95,9 +79,9 @@ export default function Weather({initialWeather}) {
     return <MainLayout>
         <div className={styles.weatherContainer}>
             <form className={styles.formStyle} onSubmit={getWeatherHandler}>
-                <InputCustom value={inputState.country} onChange={inputHandler} type={'text'} placeholder={'country'}
+                <InputCustom type={'text'} placeholder={'country'}
                              name={'country'}/>
-                <InputCustom value={inputState.city} onChange={inputHandler} type={'text'} placeholder={'city'}
+                <InputCustom type={'text'} placeholder={'city'}
                              name={'city'}/>
                 <ButtonCustom title={'find'}/>
             </form>
@@ -110,12 +94,14 @@ export default function Weather({initialWeather}) {
                 </div>
                 <h2>{Math.round(startWeather.main.temp)}&deg;</h2>
                 <div>
-                    <span>{Math.round(startWeather.main.temp_min)}&deg;  -  {Math.round(startWeather.main.temp_max)}&deg;</span>
+                    <span>{Math.round(startWeather.main.temp_min)}&deg;  - {Math.round(startWeather.main.temp_max)}&deg;</span>
                 </div>
                 <h3>{startWeather.weather[0].description}</h3>
             </div>
             <span>
-                <Link href={`/weatherForAWeek/[id]`} as={`/weatherForAWeek/${startWeather.id}` }><a className={st_link.link}>Here</a></Link> you can find weather for 16 days
+              More detail Information You can find   <Link href={`/detailWeather/[id]`}
+                                                           as={`/detailWeather/${startWeather.id}`}><a
+                className={st_link.link}>here</a></Link>
             </span>
         </div>
     </MainLayout>

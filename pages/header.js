@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from 'next/image'
 import styles from '../styles/header.module.css'
-import ButtonCustom from "../components/buttonCustom/buttonCustom";
+
 
 
 export default function Header() {
@@ -26,7 +26,6 @@ export default function Header() {
                     </a>
                 </Link>)}
             </div>
-            <ButtonCustom title={'Sign In'}/>
         </div>
     </div>
 }
