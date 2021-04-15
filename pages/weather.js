@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import styles from './../styles/weather.module.css'
+import st_link from "../styles/home.module.css"
 import {MainLayout} from "../components/MainLayout";
 import {InputCustom} from "../components/buttonCustom/inputCustom";
 import ButtonCustom from "../components/buttonCustom/buttonCustom";
@@ -7,12 +8,13 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"; // Import the Fo
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {fas} from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import Link from "next/link";
 
 
 library.add(fas);
 
 
-const API_key = "cec9a26ad731dd80c87fe414f1dc7256"
+export const API_key = "cec9a26ad731dd80c87fe414f1dc7256"
 
 export default function Weather({initialWeather}) {
 
@@ -77,6 +79,7 @@ export default function Weather({initialWeather}) {
                 const start = await response.json();
                 startWeatherSet(start)
                 setError('')
+                console.log(start)
             } else {
                 //e.target.elements.city.value = ""
                 //e.target.elements.country.value = ""
@@ -105,12 +108,15 @@ export default function Weather({initialWeather}) {
                     <FontAwesomeIcon icon={["fas", `${weatherIcon}`]}
                                      className={styles.icon}/>
                 </div>
-                <h2>{startWeather.main.temp}&deg;</h2>
+                <h2>{Math.round(startWeather.main.temp)}&deg;</h2>
                 <div>
-                    <span>{startWeather.main.temp_min}&deg;-{startWeather.main.temp_max}&deg;</span>
+                    <span>{Math.round(startWeather.main.temp_min)}&deg;  -  {Math.round(startWeather.main.temp_max)}&deg;</span>
                 </div>
                 <h3>{startWeather.weather[0].description}</h3>
             </div>
+            <span>
+                <Link href={`/weatherForAWeek/[id]`} as={`/weatherForAWeek/${startWeather.id}` }><a className={st_link.link}>Here</a></Link> you can find weather for 16 days
+            </span>
         </div>
     </MainLayout>
 }
