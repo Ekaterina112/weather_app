@@ -8,11 +8,9 @@ export default function DetailWeather({initialWeather}) {
     //const router = useRouter()
     return <MainLayout>
         <div className={styles.detailWeather}>
-<div className={styles.imageBlock}>
-    {/*here image*/}
-</div>
-
-
+            <div className={styles.imageBlock}>
+                {/*here image*/}
+            </div>
             <div className={styles.weatherBlock}>
                 <h3>Your weather forecast for today</h3>
                 <table>

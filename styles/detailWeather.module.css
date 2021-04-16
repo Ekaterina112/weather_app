@@ -4,7 +4,7 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    background: #f9f9f9;
+    background: #ececec;
 }
 
 .imageBlock {
@@ -22,7 +22,7 @@
     align-items: center;
 }
 .weatherBlock  td {
-    border-bottom: 1px solid #ebebec;
+    border-bottom: 1px solid white;
    padding: 10px;
 
 }
