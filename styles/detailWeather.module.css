@@ -1,23 +1,39 @@
 .detailWeather {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
     width: 100%;
+    background: #f9f9f9;
 }
-.detailWeather table {
+
+.imageBlock {
     width: 50%;
-    margin: 50px;
+    min-height: 70vh;
+    background-image: url("../public/assets/img_wd.jpg");
+    background-position: center center;
+    background-size: cover; /*//для сохранеия пропорций*/
 }
-.detailWeather tr {
-  height: 30px;
+
+.weatherBlock {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-@media screen and (max-width: 991.98px) {
-    .detailWeather table {
-        width: 80%;
+.weatherBlock  td {
+    border-bottom: 1px solid #ebebec;
+   padding: 10px;
+
+}
+@media only screen and (max-width: 767px) {
+    .detailWeather {
+        flex-direction: column;
+    }
+
+    .imageBlock {
+        min-height: 30vh;
+        width: 100%;
     }
 }
-@media screen and (max-width: 767.98px) {
-    .detailWeather table {
-        width: 99%;
-    }
-}
+

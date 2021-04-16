@@ -15,8 +15,6 @@ export default function Time() {
                 <Clock title={"Tokyo"} timeZone={"Asia/Tokyo"}/>
             </div>
         </div>
-
-
     </MainLayout>
 }
 

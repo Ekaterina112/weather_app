@@ -12,6 +12,14 @@
     text-align: center;
     width: 100%;
     color: #2e2e2d;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 50px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    background-image: url("../public/assets/bg-image.jpg");
+    background-position: center center;
+    background-size: cover; /*//для сохранеия пропорций*/
 }
 .timeBlock {
     display: flex;

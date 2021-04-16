@@ -6,9 +6,7 @@ export default function Contacts() {
     return <MainLayout>
         <div className={styles.contactContainer}>
                 <h1>Contact me</h1>
-                <h3>
-                    Communication can make hard work to easy. We are ready 24 hours to help you.
-                </h3>
+
             <div className={styles.informBlock}>
                 <div className={styles.address}>
                     <h3>Address</h3>
@@ -21,7 +19,9 @@ export default function Contacts() {
                     <p>+375-29-807-50-50</p>
                 </div>
             </div>
-
+            <h3 className={styles.footer}>
+                Communication can make hard work to easy. We are ready 24 hours to help you.
+            </h3>
         </div>
 
     </MainLayout>
