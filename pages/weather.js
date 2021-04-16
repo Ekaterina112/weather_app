@@ -110,7 +110,7 @@ export default function Weather({initialWeather}) {
 //initial state in next.js
 //Static method, doing on a server
 Weather.getInitialProps = async () => {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Gomel&units=metric&appid=${API_key}`)
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Minsk&units=metric&appid=${API_key}`)
     const initialWeather = await response.json()
     return {
         initialWeather

@@ -3,6 +3,7 @@
     padding: 50px;
     box-sizing: border-box;
     display: flex;
+    flex-wrap: wrap;
     background-image: url("../public/assets/bg-image.jpg");
     background-position: center center;
     background-size: cover; /*//для сохранеия пропорций*/
