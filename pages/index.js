@@ -12,8 +12,8 @@ export default function Index() {
             <title>
                 Rain Info
             </title>
-            <meta name='keywords' content='flowers, cozy'/>
-            <meta name='description' content='shop flowers, test shop'/>
+            <meta name='keywords' content='weather, time'/>
+            <meta name='description' content='weather app'/>
             <meta charSet='utf-8'/>
         </Head>
         <div className={styles.homeContainer}>
