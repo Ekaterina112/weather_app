@@ -21,6 +21,11 @@
     background-position: center center;
     background-size: cover; /*//для сохранеия пропорций*/
 }
+@media screen and (max-width: 767.98px) {
+    .timeContainer  {
+        padding: 20px;
+    }
+}
 .timeBlock {
     display: flex;
     flex-direction: row;
