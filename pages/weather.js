@@ -44,11 +44,14 @@ export default function Weather({initialWeather}) {
             case id >= 700 && id <= 781:
                 weatherIconSet("smog")
                 break
-            case id >= 800 && id <= 804:
+            case id = 800:
+                weatherIconSet("sun")
+                break
+            case id > 800 && id <= 804:
                 weatherIconSet("cloud")
                 break
             default:
-                weatherIconSet("rainbow")
+                weatherIconSet("sun")
 
         }
     }
