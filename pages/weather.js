@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import styleContainer from "../styles/container.module.css";
 import styles from './../styles/weather.module.css'
 import st_link from "../styles/home.module.css"
 import {MainLayout} from "../components/MainLayout";
@@ -44,7 +45,7 @@ export default function Weather({initialWeather}) {
             case id >= 700 && id <= 781:
                 weatherIconSet("smog")
                 break
-            case id = 800:
+            case id === 800:
                 weatherIconSet("sun")
                 break
             case id > 800 && id <= 804:
@@ -80,7 +81,7 @@ export default function Weather({initialWeather}) {
 
 
     return <MainLayout>
-        <div className={styles.weatherContainer}>
+        <div className={styleContainer.mainContainer} style={{alignItems: "center"}}>
             <form className={styles.formStyle} onSubmit={getWeatherHandler}>
                 <InputCustom type={'text'} placeholder={'country'}
                              name={'country'}/>

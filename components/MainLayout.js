@@ -9,7 +9,7 @@ export function MainLayout({children}) {
         <nav>
             <Header/>
         </nav>
-        <main className={styles.mainContainer}>
+        <main>
             {children}
         </main>
         <footer>

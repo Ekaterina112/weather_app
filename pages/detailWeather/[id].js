@@ -29,7 +29,7 @@ export default function DetailWeather({initialWeather}) {
                     </tr>
                     <tr>
                         <td>Atmospheric pressure</td>
-                        <td>{initialWeather.main.pressure}hPa</td>
+                        <td>{initialWeather.main.pressure} hPa</td>
                     </tr>
                     <tr>
                         <td>Cloudiness</td>
@@ -37,7 +37,7 @@ export default function DetailWeather({initialWeather}) {
                     </tr>
                     <tr>
                         <td>Wind speed</td>
-                        <td>{initialWeather.wind.speed}meter/sec</td>
+                        <td>{initialWeather.wind.speed} meter/sec</td>
                     </tr>
                     </tbody>
                 </table>

@@ -11,11 +11,6 @@
     background-position: center center;
     background-size: cover; /*//для сохранеия пропорций*/
 }
-@media screen and (max-width: 767.98px) {
-    .homeContainer  {
-        padding: 20px;
-    }
-}
 
 .inner_h3 {
     font-size: 70px;
