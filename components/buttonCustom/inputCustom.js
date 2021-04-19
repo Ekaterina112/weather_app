@@ -1,10 +1,21 @@
 import React from "react";
-import styles from "./inputCustom.module.css"
+import styled from 'styled-components'
+
+const StyledInput = styled.input`
+  color: #7c7d7e;
+  font-size: 16px;
+  border: 0 none;
+  border-bottom: 1px solid #ebebec;
+  margin:10px 0;
+  font-family: 'Poppins', sans-serif;
+  outline:none;
+  width: 100%
+`
 
 export function InputCustom({type, placeholder, name}) {
 
     return <div>
-        <input type={type} placeholder={placeholder} className={styles.customInput} name={name} autoComplete={'off'}/>
+        <StyledInput type={type} placeholder={placeholder} name={name} autoComplete={'off'}/>
     </div>
 
 }

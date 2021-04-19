@@ -10,7 +10,17 @@ import {library} from '@fortawesome/fontawesome-svg-core';
 import {fas} from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Link from "next/link";
+import styled from 'styled-components'
 
+const StyledError = styled.div`
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  height: 40px;
+  color: darkolivegreen;
+`
 
 library.add(fas);
 
@@ -89,7 +99,7 @@ export default function Weather({initialWeather}) {
                              name={'city'}/>
                 <ButtonCustom title={'find'}/>
             </form>
-            <div className={styles.blockError}>{error && error}</div>
+            <StyledError>{error && error}</StyledError>
             <div className={styles.weatherBlock}>
                 <h1>{startWeather.sys.country}, {startWeather.name}</h1>
                 <div className={styles.icon}>
