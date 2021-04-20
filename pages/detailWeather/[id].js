@@ -1,17 +1,17 @@
 import React from "react";
 import {MainLayout} from "../../components/MainLayout";
 import {API_key} from "../weather";
-import styles from "./../../styles/detailWeather.module.css"
-
+import styled from 'styled-components'
+import img from './../../public/assets/img_wd.jpg';
 
 export default function DetailWeather({initialWeather}) {
     //const router = useRouter()
     return <MainLayout>
-        <div className={styles.detailWeather}>
-            <div className={styles.imageBlock}>
+        <StyledDetailWeather>
+            <StyledImageBlock>
                 {/*here image*/}
-            </div>
-            <div className={styles.weatherBlock}>
+            </StyledImageBlock>
+            <StyledWeatherBlock>
                 <h3>Your weather forecast for today</h3>
                 <table>
                     <tbody>
@@ -41,8 +41,8 @@ export default function DetailWeather({initialWeather}) {
                     </tr>
                     </tbody>
                 </table>
-            </div>
-        </div>
+            </StyledWeatherBlock>
+        </StyledDetailWeather>
     </MainLayout>
 }
 DetailWeather.getInitialProps = async (ctx) => {
@@ -54,3 +54,37 @@ DetailWeather.getInitialProps = async (ctx) => {
     }
 }
 
+
+const StyledDetailWeather = styled.div`
+  display: flex;
+  align-items: center;
+  background: #ececec;
+  @media only screen and (max-width: 767.98px) {
+    flex-direction: column;
+  }`
+
+
+const StyledImageBlock = styled.div`
+  width: 50%;
+  min-height: 70vh;
+  background-image: url(${img});;
+  background-position: center center;
+  background-size: cover; /*//для сохранеия пропорций*/
+  @media only screen and (max-width: 767.98px) {
+    min-height: 30vh;
+    width: 100%;
+  }`
+
+
+const StyledWeatherBlock = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & td {
+    border-bottom: 1px solid white;
+    padding: 10px;
+  }
+
+`

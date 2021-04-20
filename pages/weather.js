@@ -1,7 +1,4 @@
 import React, {useEffect, useState} from "react";
-import styleContainer from "../styles/container.module.css";
-import styles from './../styles/weather.module.css'
-import st_link from "../styles/home.module.css"
 import {MainLayout} from "../components/MainLayout";
 import {InputCustom} from "../components/buttonCustom/inputCustom";
 import ButtonCustom from "../components/buttonCustom/buttonCustom";
@@ -11,16 +8,8 @@ import {fas} from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Link from "next/link";
 import styled from 'styled-components'
+import {MainContainer, StyledLink} from "./index";
 
-const StyledError = styled.div`
-  display: flex;
-  text-align: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 400;
-  height: 40px;
-  color: darkolivegreen;
-`
 
 library.add(fas);
 
@@ -91,33 +80,31 @@ export default function Weather({initialWeather}) {
 
 
     return <MainLayout>
-        <div className={styleContainer.mainContainer} style={{alignItems: "center"}}>
-            <form className={styles.formStyle} onSubmit={getWeatherHandler}>
+        <MainContainer align ='center'>
+            <StyledForm onSubmit={getWeatherHandler}>
                 <InputCustom type={'text'} placeholder={'country'}
                              name={'country'}/>
                 <InputCustom type={'text'} placeholder={'city'}
                              name={'city'}/>
                 <ButtonCustom title={'find'}/>
-            </form>
+            </StyledForm>
             <StyledError>{error && error}</StyledError>
-            <div className={styles.weatherBlock}>
+            <StyledWeatherBlock>
                 <h1>{startWeather.sys.country}, {startWeather.name}</h1>
-                <div className={styles.icon}>
-                    <FontAwesomeIcon icon={["fas", `${weatherIcon}`]}
-                                     className={styles.icon}/>
-                </div>
+                <StyledIcon>
+                    <FontAwesomeIcon icon={["fas", `${weatherIcon}`]}/>
+                </StyledIcon>
                 <h2>{Math.round(startWeather.main.temp)}&deg;</h2>
                 <div>
                     <span>{Math.round(startWeather.main.temp_min)}&deg;  - {Math.round(startWeather.main.temp_max)}&deg;</span>
                 </div>
                 <h3>{startWeather.weather[0].description}</h3>
-            </div>
+            </StyledWeatherBlock>
             <span>
               More detail Information You can find   <Link href={`/detailWeather/[id]`}
-                                                           as={`/detailWeather/${startWeather.id}`}><a
-                className={st_link.link}>here</a></Link>
+                                                           as={`/detailWeather/${startWeather.id}`}><StyledLink>here</StyledLink></Link>
             </span>
-        </div>
+        </MainContainer>
     </MainLayout>
 }
 
@@ -131,4 +118,42 @@ Weather.getInitialProps = async () => {
     }
 }
 
+const StyledError = styled.div`
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  height: 40px;
+  color: darkolivegreen;
+`
+const StyledForm = styled.form`
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+  padding: 15px 15px;
+  background-color: white;
+  box-shadow: 0 0 20px rgb("0 0 0.20");
+  @media screen and (max-width: 1199.98px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 991.98px) {
+    width: 90%
+  }
+  @media screen and (max-width: 767.98px) {
+    flex-direction: column;
+  }`
 
+
+const StyledWeatherBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const StyledIcon = styled.div`font-size: 100px;`

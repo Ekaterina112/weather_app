@@ -1,29 +1,45 @@
-import {MainLayout} from "../components/MainLayout";
 import React from "react";
-import styleContainer from "../styles/container.module.css";
-import styles from "../styles/contacts.module.css"
+import styled from 'styled-components'
+import {MainLayout} from "../components/MainLayout";
+import {MainContainer, StyledTitleOne, StyledTitleThree} from "./index";
 
 export default function Contacts() {
     return <MainLayout>
-        <div className={styleContainer.mainContainer} style={{alignItems:"center"}}>
-            <h1>Contact me</h1>
-
-            <div className={styles.informBlock}>
+        <MainContainer align ='center'>
+            <StyledTitleOne>Contact me</StyledTitleOne>
+            <StyledInformBlock>
                 <div>
-                    <h3>Address</h3>
+                    <StyledTitleThree>Address</StyledTitleThree>
                     <p>Belarus, Gomel, 246013 </p>
                     <p>Belarus, Minsk, 206010</p>
                 </div>
                 <div>
-                    <h3>Contacts</h3>
+                    <StyledTitleThree>Contacts</StyledTitleThree>
                     <p>@ekaterinan112@gmail.com</p>
                     <p>+375-29-807-50-50</p>
                 </div>
-            </div>
+            </StyledInformBlock>
             <h3>
                 Communication can make hard work to easy. We are ready 24 hours to help you.
             </h3>
-        </div>
-
+        </MainContainer>
     </MainLayout>
 }
+
+
+
+
+const StyledInformBlock = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 30px;
+  width: 100%;
+  & h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px; 
+  }
+`
