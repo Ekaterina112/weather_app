@@ -6,8 +6,8 @@ import styled from 'styled-components'
 
 export default function Time() {
     return <MainLayout>
-        <MainContainer>
-            <StyledTitleOne>"Take time to make Your Soul happy"</StyledTitleOne>
+        <MainContainer text='center'>
+            <h1>"Take time to make Your Soul happy"</h1>
             <StyledInnerBlock>
                 <Clock title={"London"} timeZone={"Europe/London"}/>
                 <Clock title={"Minsk"} timeZone={"Europe/Minsk"}/>
@@ -17,13 +17,6 @@ export default function Time() {
     </MainLayout>
 }
 
-export const StyledTitleOne = styled.h1`
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-`
 export const StyledInnerBlock = styled.div`
   display: flex;
   flex-direction: row;

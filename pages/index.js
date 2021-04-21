@@ -34,6 +34,7 @@ export const MainContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items:  ${props => props.align || 'stretch'};
+  text-align:  ${props => props.text || 'stretch'};
   flex-wrap: wrap;
   padding: 50px;
   min-height: 70vh;
@@ -42,6 +43,9 @@ export const MainContainer = styled.div`
   background-position: center center;
   background-size: cover;
   color: #2e2e2d;
+  @media (max-width: 576px) {
+    padding: 10px;
+  }
 `
 export const StyledTitleThree = styled.h3`
   font-size: 70px;
@@ -49,6 +53,9 @@ export const StyledTitleThree = styled.h3`
   line-height: 100px;
   margin-bottom: 8px;
   margin-top: 0;
+  @media (max-width: 576px) {
+    font-size: 60px;
+  }
 `
 export const  StyledTitleOne = styled.h1`
   color: #000000;

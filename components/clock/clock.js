@@ -2,6 +2,23 @@ import React, {useState} from "react";
 import styled from 'styled-components'
 
 
+
+export default function Clock({timeZone, title}) {
+    let time = new Date().toLocaleTimeString("en-US", {timeZone: timeZone})
+    let [currentTime, setCurrentTime] = useState(time)
+
+    const updateTime = () => {
+        time = new Date().toLocaleTimeString("en-US", {timeZone: timeZone})
+        setCurrentTime(time)
+    }
+    setInterval(updateTime, 1000)
+    return <StyledClock>
+        <h3>{title}</h3>
+        {time}
+    </StyledClock>
+}
+
+
 const StyledClock = styled.div`
   width: 240px;
   display: flex;
@@ -21,18 +38,3 @@ const StyledClock = styled.div`
     -webkit-box-shadow: 0 3px 20px rgba(5, 5, 6, 0.10);
   }
 `
-
-export default function Clock({timeZone, title}) {
-    let time = new Date().toLocaleTimeString("en-US", {timeZone: timeZone})
-    let [currentTime, setCurrentTime] = useState(time)
-
-    const updateTime = () => {
-        time = new Date().toLocaleTimeString("en-US", {timeZone: timeZone})
-        setCurrentTime(time)
-    }
-    setInterval(updateTime, 1000)
-    return <StyledClock>
-        <h3>{title}</h3>
-        {time}
-    </StyledClock>
-}
