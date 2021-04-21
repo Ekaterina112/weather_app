@@ -80,7 +80,7 @@ export default function Weather({initialWeather}) {
 
 
     return <MainLayout>
-        <MainContainer align ='center'>
+        <MainContainer align='center'>
             <StyledForm onSubmit={getWeatherHandler}>
                 <InputCustom type={'text'} placeholder={'country'}
                              name={'country'}/>

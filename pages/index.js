@@ -75,6 +75,7 @@ export const StyledLink = styled.a`
   text-decoration: none;
   color: #000000;
   position: relative;
+  cursor: pointer;
   &::after {
     width: 0;
     background: #000000 none repeat scroll 0 0;

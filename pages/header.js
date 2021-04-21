@@ -57,6 +57,7 @@ const StyledLink = styled.div`
   transition: all 0.4s ease-in-out 0s;
   text-decoration: none;
   position: relative;
+  cursor: pointer;
 
   &::after {
     width: 0;
